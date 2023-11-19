@@ -3,6 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import spider from "../assets/spider-man.png";
+import notImg from "../assets/point-dintero.png";
 
 const Comic = ({ home, setHome }) => {
   // console.log(home);
@@ -16,7 +18,9 @@ const Comic = ({ home, setHome }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3004/comics/${id}`);
+        const response = await axios.get(
+          `https://site--backend-marvel--xxx6qfsmx2j6.code.run/comics/${id}`
+        );
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -30,7 +34,14 @@ const Comic = ({ home, setHome }) => {
   return isLoading ? (
     <div>Chargement...</div>
   ) : (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${spider})`,
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+      }}
+    >
       <h1>Les Comics de {data.name}</h1>
       <div>
         <Carousel showThumbs={false}>
@@ -38,15 +49,22 @@ const Comic = ({ home, setHome }) => {
             return (
               <article className="container" key={comic._id}>
                 <div className="character-left-part">
-                  <img
-                    className="img-comic"
-                    src={comic.thumbnail.path + "." + comic.thumbnail.extension}
-                    alt="comics"
-                  />
+                  {comic.thumbnail.path !==
+                  "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
+                    <img
+                      className="img-comic"
+                      src={
+                        comic.thumbnail.path + "." + comic.thumbnail.extension
+                      }
+                      alt="comics"
+                    />
+                  ) : (
+                    <img src={notImg} />
+                  )}
                 </div>
                 <div className="character-right-part">
                   <h2>{comic.title}</h2>
-                  <p>{comic.description}</p>
+                  <p className="description-comic">{comic.description}</p>
                 </div>
               </article>
             );

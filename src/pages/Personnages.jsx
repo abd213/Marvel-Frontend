@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Personnages.css";
 import venom from "../assets/venom.png";
+import notImg from "../assets/point-dintero.png";
 
 const Personnages = ({ setHome }) => {
   // console.log(setHome);
@@ -19,7 +20,7 @@ const Personnages = ({ setHome }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3004/personnages?name=${search}&skip=${offset}`
+          `https://site--backend-marvel--xxx6qfsmx2j6.code.run/personnages?name=${search}&skip=${offset}`
         );
         // console.log(response.data);
         setData(response.data);
@@ -57,14 +58,17 @@ const Personnages = ({ setHome }) => {
               }}
             />
 
-            <span class="lnr lnr-magnifier"></span>
+            {/* <span className="lnr lnr-magnifier"></span> */}
           </div>
           <Carousel
             className="veve"
             showIndicators={false}
             showThumbs={false}
-            autoPlay
-            interval={4000}
+            // centerMode={true}
+            // centerSlidePercentage={60}
+            // autoPlay
+            // interval={4000}
+            // axis="vertical"
             infiniteLoop
           >
             {data.results.map((character) => {
@@ -75,15 +79,20 @@ const Personnages = ({ setHome }) => {
                     key={character._id}
                   >
                     <div className="character-left-part">
-                      <img
-                        className="character-img"
-                        src={
-                          character.thumbnail.path +
-                          "." +
-                          character.thumbnail.extension
-                        }
-                        alt="character"
-                      />
+                      {character.thumbnail.path !==
+                      "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
+                        <img
+                          className="character-img"
+                          src={
+                            character.thumbnail.path +
+                            "." +
+                            character.thumbnail.extension
+                          }
+                          alt="character"
+                        />
+                      ) : (
+                        <img src={notImg} />
+                      )}
                     </div>
 
                     <div className="character-right-part">

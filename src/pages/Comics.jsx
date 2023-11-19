@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { useEffect, useState } from "react";
 import bgcComics from "../assets/black-panthere.png";
+import notImg from "../assets/point-dintero.png";
 
 const Comics = ({ setHome }) => {
   setHome(true);
@@ -16,7 +17,7 @@ const Comics = ({ setHome }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3004/comics?title=${search}&skip=${offset}`
+          `https://site--backend-marvel--xxx6qfsmx2j6.code.run/comics?title=${search}&skip=${offset}`
         );
         console.log(response.data);
         setData(response.data);
@@ -56,15 +57,20 @@ const Comics = ({ setHome }) => {
           <Carousel autoPlay showIndicators={false} showThumbs={false}>
             {data.results.map((comic) => {
               return (
-                <article key={comic._id} className="container">
+                <article key={comic._id} className="container container-comics">
                   <div className="comics-left-part">
-                    <img
-                      className="img-comic"
-                      src={
-                        comic.thumbnail.path + "." + comic.thumbnail.extension
-                      }
-                      alt="comic"
-                    />
+                    {comic.thumbnail.path !==
+                    "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
+                      <img
+                        className="img-comic"
+                        src={
+                          comic.thumbnail.path + "." + comic.thumbnail.extension
+                        }
+                        alt="comic"
+                      />
+                    ) : (
+                      <img src={notImg} />
+                    )}
                   </div>
                   <div className="comics-right-part">
                     <h2>{comic.title}</h2>

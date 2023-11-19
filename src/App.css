@@ -3,22 +3,29 @@ body {
   font-family: "Kdam Thmor Pro", sans-serif;
   color: whitesmoke;
 }
+p {
+  line-height: 25px;
+}
 h1 {
   text-align: center;
-  font-size: 25px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 50px;
+  padding: 20px;
 }
-.container {
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
-}
+} */
 
 .wallpaper {
   height: 100vh;
-  width: 100vmax;
+  max-width: 100vmax;
 
   /* border: 3px solid blue; */
+}
+.header label {
+  display: none;
 }
 .header {
   padding: 15px;
@@ -27,7 +34,6 @@ h1 {
   align-items: center;
   gap: 2rem;
   /* border-bottom: 1px solid whitesmoke; */
-  margin-bottom: 30px;
 }
 .header button {
   width: 150px;
@@ -40,7 +46,7 @@ h1 {
 }
 .header button:hover {
   background-color: rgba(47, 47, 47, 0.6);
-
+  border: 1px solid silver;
   transform: scale(1.1);
 }
 .header .button {
@@ -48,6 +54,9 @@ h1 {
   width: 50%;
   display: flex;
   justify-content: space-between;
+}
+.button-comics {
+  margin-right: 15px;
 }
 
 .header-home {
@@ -77,6 +86,13 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+.home-description p {
+  line-height: 23px;
+}
+header .logo-principal {
+  height: 52px;
+  object-fit: cover;
 }
 
 .wallpaper button {
@@ -177,6 +193,9 @@ article :hover {
   font-style: italic;
   line-height: 22px;
 }
+.description-comic {
+  color: whitesmoke;
+}
 
 .veve {
   /* border: 2px solid green; */
@@ -204,6 +223,9 @@ article :hover {
   /* border: 1px solid blue; */
   display: flex;
   align-items: center;
+}
+.button-offset > button :hover {
+  transform: scale(1.1);
 }
 
 .button-offset .lnr-arrow-left-circle,
@@ -253,8 +275,12 @@ article :hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   /* border: solid 1px white; */
   /* padding-left: 30px; */
+}
+.container-comics {
+  padding: 20px;
 }
 
 .comics-right-part h2 {
@@ -264,4 +290,121 @@ article :hover {
   font-style: italic;
   color: lightgoldenrodyellow;
   margin-bottom: 80px;
+}
+
+@media screen and (max-width: 900px) {
+  .home-description {
+    width: 60%;
+    padding-right: 20px;
+  }
+  .button-home {
+    /* border: 1px solid red; */
+    gap: 1rem;
+    /* width: 100%; */
+  }
+  .wallpaper button {
+    font-size: 15px;
+    width: 90px;
+    border-radius: 20px;
+    height: 40px;
+  }
+  .logo-round {
+    width: 80px;
+    /* border: 1px solid yellow; */
+    height: 40px;
+  }
+  .header {
+    /* border: solid 1px red; */
+    height: 80px;
+  }
+
+  .header-view {
+    height: 100vh;
+    /* display: block; */
+
+    /* border: 1px solid blue; */
+  }
+  .header .hide-nav {
+    display: none;
+  }
+  .nav-view {
+    /* display: none; */
+    flex-direction: column;
+    display: block;
+    /* justify-content: space-evenly; */
+    /* border: solid 1px green; */
+    height: 80vh;
+    width: 100vw;
+    /* background-color: black; */
+  }
+  header nav {
+    /* border: 1px solid salmon; */
+    display: flex;
+    justify-content: center;
+  }
+  .responsive-header {
+    /* border: solid 4px red; */
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-between;
+  }
+  .header label {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    /* justify-content: flex-end; */
+    /* border: 2px solid red; */
+  }
+  .input-search input {
+    /* border: 1px solid red; */
+    width: 70%;
+  }
+  .character-card {
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  .veve {
+    /* border: solid 3px green; */
+    padding: 1px;
+    width: 200px;
+  }
+
+  /* .header {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    
+  }
+  .header button {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+   
+    border-radius: 20px;
+    
+  }
+  .header button:hover {
+    background-color: rgba(47, 47, 47, 0.6);
+  
+    transform: scale(1.1);
+  }
+  .header .button {
+   
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .header-home {
+   
+    display: flex;
+    justify-content: center;
+  } */
 }
