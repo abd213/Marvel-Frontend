@@ -197,9 +197,9 @@ article :hover {
 }
 .character-right-part p {
   font-size: 19px;
-  border: 1px saddlebrown solid;
+
   font-style: italic;
-  line-height: 22px;
+  line-height: 23px;
 }
 .description-comic {
   color: whitesmoke;
@@ -235,13 +235,17 @@ article :hover {
 .button-offset > button :hover {
   transform: scale(1.1);
 }
+.link {
+  border: rebeccapurple 1px solid;
+}
 
 .button-offset .lnr-arrow-left-circle,
 .lnr-arrow-right-circle {
   /* border: 1px solid red; */
   color: white;
-  background-color: transparent;
+  background-color: black;
   font-size: 50px;
+  border-radius: 50%;
 }
 .page {
   font-size: 20px;

@@ -73,7 +73,11 @@ const Personnages = ({ setHome }) => {
           >
             {data.results.map((character) => {
               return (
-                <Link to={`/comics/${character._id}`} key={character._id}>
+                <Link
+                  className="link"
+                  to={`/comics/${character._id}`}
+                  key={character._id}
+                >
                   <article
                     className="container character-card"
                     key={character._id}
@@ -99,7 +103,7 @@ const Personnages = ({ setHome }) => {
                       <h2>{character.name}</h2>
 
                       {character.description !== "" && (
-                        <p>character.description</p>
+                        <p>{character.description}</p>
                       )}
                     </div>
                   </article>
