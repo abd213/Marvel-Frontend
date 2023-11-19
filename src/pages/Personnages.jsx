@@ -91,13 +91,16 @@ const Personnages = ({ setHome }) => {
                           alt="character"
                         />
                       ) : (
-                        <img src={notImg} />
+                        <img className="character-img" src={notImg} />
                       )}
                     </div>
 
                     <div className="character-right-part">
                       <h2>{character.name}</h2>
-                      <p>{character.description}</p>
+
+                      {character.description !== "" && (
+                        <p>character.description</p>
+                      )}
                     </div>
                   </article>
                   {/* <div className="fav-icon">

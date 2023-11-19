@@ -32,8 +32,9 @@ const Header = (props) => {
             <Link to="/comics">
               <button className="button-comics">Comics</button>
             </Link>
-
-            <button>Favoris</button>
+            <Link>
+              <button>Favoris</button>
+            </Link>
           </div>
         </nav>
       </header>

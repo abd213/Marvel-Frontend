@@ -35,6 +35,9 @@ h1 {
   gap: 2rem;
   /* border-bottom: 1px solid whitesmoke; */
 }
+.button {
+  gap: 1rem;
+}
 .header button {
   width: 150px;
   height: 50px;
@@ -54,9 +57,6 @@ h1 {
   width: 50%;
   display: flex;
   justify-content: space-between;
-}
-.button-comics {
-  margin-right: 15px;
 }
 
 .header-home {
@@ -114,6 +114,10 @@ header .logo-principal {
   /* border: white solid 1px; */
   display: flex;
   justify-content: space-around;
+  cursor: pointer;
+}
+.button-home button {
+  border: none;
 }
 
 /* ************************ 
@@ -190,6 +194,7 @@ article :hover {
 }
 .character-right-part p {
   font-size: 19px;
+  border: 1px saddlebrown solid;
   font-style: italic;
   line-height: 22px;
 }
@@ -231,7 +236,8 @@ article :hover {
 .button-offset .lnr-arrow-left-circle,
 .lnr-arrow-right-circle {
   /* border: 1px solid red; */
-
+  color: white;
+  background-color: transparent;
   font-size: 50px;
 }
 .page {
